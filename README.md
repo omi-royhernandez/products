@@ -13,7 +13,7 @@
 #### Backend
 - first install python and poetry
 - activate poetry environment `$(poetry env activate)`
-- run `poetry install` to install dependencies
+- run `poetry install --no-root` to install dependencies
 - set .env file var `DATABASE_URL` to your postgres database url
 - also set `sqlalchemy.url` in `alembic.ini` file to your database url
 - run `alembic upgrade head`

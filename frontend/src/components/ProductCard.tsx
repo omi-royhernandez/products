@@ -18,7 +18,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onDelete,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  if (!id) throw new Error("No id found")
 
   return (
     <div className="flex w-[350px] flex-col items-center rounded-lg bg-white p-3 shadow-lg">

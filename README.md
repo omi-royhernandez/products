@@ -11,7 +11,9 @@
 - set .env file var `VITE_BACKEND_URL` to your backend api url
 
 #### Backend
-- poetry install
+- first install python and poetry
+- activate poetry environment `$(poetry env activate)`
+- run `poetry install` to install dependencies
 - set .env file var `DATABASE_URL` to your postgres database url
 - also set `sqlalchemy.url` in `alembic.ini` file to your database url
 - run `alembic upgrade head`

@@ -71,7 +71,7 @@ function App() {
       }
 
       setProducts((prev) =>
-        prev.map((p) => (p.name === updatedProduct.name ? updatedProduct : p)),
+        prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p)),
       );
     } catch (error) {
       console.error(error);

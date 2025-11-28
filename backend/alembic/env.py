@@ -6,12 +6,16 @@ from alembic import context
 from database import Base  # your SQLAlchemy Base
 from model import Product  # import all models so metadata is registered
 
+from settings import settings
+
 # Alembic Config object
 config = context.config
 
 # Setup logging
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
+
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
 # Autogenerate support
 target_metadata = Base.metadata

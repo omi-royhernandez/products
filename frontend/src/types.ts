@@ -3,5 +3,8 @@ export type ProductBase = {
   price: number;
   description: string;
   img: string;
-  id?: number;
+}
+
+export type Product = ProductBase & {
+  id: number
 }

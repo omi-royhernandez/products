@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import type { ProductBase } from "../types";
+import type { Product } from "../types";
 import { ClipLoader } from "react-spinners";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
-interface ProductCardProps extends ProductBase {
-  onEdit: (product: ProductBase) => void;
+interface ProductCardProps extends Product {
+  onEdit: (product: Product) => void;
   onDelete: (id: number) => void;
 }
 

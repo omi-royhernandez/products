@@ -1,14 +1,14 @@
 import React from "react";
-import type { ProductBase } from "../types";
+import type { Product } from "../types";
 
 interface EditModalProps {
-  product: ProductBase;
+  product: Product;
   onClose: () => void;
-  onSave: (updatedProduct: ProductBase) => void;
+  onSave: (updatedProduct: Product) => void;
 }
 
 const EditModal: React.FC<EditModalProps> = ({ product, onClose, onSave }) => {
-  const [formData, setFormData] = React.useState<ProductBase>({ ...product });
+  const [formData, setFormData] = React.useState<Product>({ ...product });
 
   const handleChange = (field: string, value: string | number) => {
     setFormData((prev) => ({ ...prev, [field]: value }));

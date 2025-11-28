@@ -8,7 +8,6 @@ interface CreateModalProps {
 
 const CreateModal: React.FC<CreateModalProps> = ({ onClose, onCreate }) => {
   const [formData, setFormData] = React.useState<ProductBase>({
-    id: 0,
     name: "",
     price: 0,
     description: "",

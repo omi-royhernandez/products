@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
 import EditModal from "./components/EditModal";
 import { ClipLoader } from "react-spinners";
-import type { ProductBase } from "./types";
+import type { Product, ProductBase } from "./types";
 import { AiFillPlusCircle } from "react-icons/ai";
 import CreateModal from "./components/CreateModal";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
-  const [products, setProducts] = useState<ProductBase[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [editingProduct, setEditingProduct] = useState<ProductBase | null>(
+  const [editingProduct, setEditingProduct] = useState<Product | null>(
     null,
   );
   const [createModal, setCreateModal] = useState<boolean>(false);
@@ -32,7 +32,7 @@ function App() {
     loadProducts();
   }, []);
 
-  const handleEdit = (product: ProductBase) => {
+  const handleEdit = (product: Product) => {
     setEditingProduct(product);
   };
 
@@ -57,7 +57,7 @@ function App() {
       loadProducts();
     }
   };
-  const handleSave = async (updatedProduct: ProductBase) => {
+  const handleSave = async (updatedProduct: Product) => {
     try {
       const response = await fetch(`${API_URL}/${updatedProduct.id}`, {
         method: "PUT",

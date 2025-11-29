@@ -5,7 +5,7 @@ from database import db_dependency
 from model import Product
 from schema import ProductCreate, ProductUpdate
 from enums import ResponseStatusEnum
-
+from migrations import run_migrations
 
 from sqlalchemy import select
 
@@ -23,6 +23,8 @@ app.add_middleware(
   allow_methods=["*"],
   allow_headers=["*"],
 )
+
+run_migrations()
 
 @app.get("/")
 async def get_products(session = db_dependency):

@@ -20,13 +20,9 @@ config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 # Autogenerate support
 target_metadata = Base.metadata
 
-# Get the DB URL from alembic.ini
-DATABASE_URL = config.get_main_option("sqlalchemy.url")
-
-
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode."""
-    url = DATABASE_URL
+    url = settings.DATABASE_URL
     context.configure(
         url=url,
         target_metadata=target_metadata,
@@ -41,7 +37,7 @@ def run_migrations_offline() -> None:
 async def run_migrations_online() -> None:
     """Run migrations in 'online' mode using AsyncEngine."""
     connectable = create_async_engine(
-        DATABASE_URL,
+        settings.DATABASE_URL,
         poolclass=pool.NullPool,
     )
 

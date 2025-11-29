@@ -13,7 +13,7 @@ app = FastAPI()
 
 origins = [
   "http://localhost:5173",
-  "https://rsah-products.netlify.app/",
+  "https://rsah-products.netlify.app",
 ]
 
 app.add_middleware(
